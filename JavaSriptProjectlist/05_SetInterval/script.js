@@ -11,12 +11,14 @@ const randomColor = () => {
 const colorBox = document.getElementById("color-box");
 const startBtn = document.getElementById("start-btn");
 const stopBtn = document.getElementById("stop-btn");
+const text = document.getElementById("text");
 let intervalId;
 
 startBtn.addEventListener("click", () => {
     if (!intervalId) {// prevent multiple intervals
         intervalId = setInterval(() => {
             colorBox.style.backgroundColor = randomColor();
+            text.innerText = randomColor();
         }, 1000);
     }
     console.log(startBtn)
@@ -25,5 +27,6 @@ startBtn.addEventListener("click", () => {
 stopBtn.addEventListener("click", () => {
     clearInterval(intervalId);
     intervalId = null
+    text.innerText = "#FFFFFF";
     colorBox.style.backgroundColor = "#FFFFFF"; // Reset to white
 })
