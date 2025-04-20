@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Futuristic Random Number</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .glow-text {
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+    }
+
+    .glow-border {
+      box-shadow: 0 0 12px 2px rgba(0, 174, 255, 0.4);
+    }
+
+    .neon-button {
+      box-shadow: 0 0 10px rgba(0, 174, 255, 0.6), 0 0 20px rgba(0, 174, 255, 0.4);
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #00bcd4;
+      box-shadow: 0 0 5px #00bcd4;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen px-4">
+  <div class="glass p-8 rounded-2xl glow-border w-full max-w-md text-white">
+    <h1 class="text-3xl md:text-4xl font-bold mb-6 text-center glow-text">🎲 Random Number Generator</h1>
+    
+    <label for="guess-number" class="block mb-2 text-sm font-medium text-gray-200">Enter Maximum Number</label>
+    <input
+      type="number"
+      id="guess-number"
+      placeholder="e.g., 100"
+      class="w-full p-3 rounded-lg border border-gray-300 bg-white/20 text-white placeholder-gray-300 mb-4"
+      required
+    />
+
+    <button
+      id="generate-btn"
+      class="w-full p-3 bg-cyan-500 text-white font-semibold rounded-lg transition-all duration-300 neon-button hover:bg-cyan-600"
+    >
+      Generate Random Number
+    </button>
+
+    <div class="mt-6 text-center space-y-2">
+      <p class="text-sm"><strong>Previous Number:</strong> <span id="prev-number" class="text-cyan-300"></span></p>
+      <p class="text-sm"><strong>Guesses Remaining:</strong> <span id="guess-count" class="text-pink-400">5</span></p>
+    </div>
+
+    <div id="result" class="mt-6 text-center text-xl font-bold text-green-400 glow-text"></div>
+  </div>
+
+</body>
+<script src="./srcipt.js"></script>
+</html>
